@@ -23,3 +23,6 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+out/production/resources/reports/
+out/production/resources/templates/
+src/main/resources/static/

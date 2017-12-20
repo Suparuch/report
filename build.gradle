@@ -10,11 +10,13 @@ buildscript {
 	}
 }
 
+
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
+apply plugin: 'scala'
 
-group = 'com.nec.'
+group = 'com.nec'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
@@ -25,7 +27,21 @@ repositories {
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 	compile('org.springframework.boot:spring-boot-starter-web')
+	// https://mvnrepository.com/artifact/net.sf.jasperreports/jasperreports
+	compile group: 'net.sf.jasperreports', name: 'jasperreports', version: '6.4.0'
+	// https://mvnrepository.com/artifact/net.sf.jasperreports/jasperreports-fonts
+	compile group: 'net.sf.jasperreports', name: 'jasperreports-fonts', version: '6.0.0'
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-parent
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-parent', version: '1.5.8.RELEASE', ext: 'pom'
+	// https://mvnrepository.com/artifact/org.springframework/spring-context-support
+	compile group: 'org.springframework', name: 'spring-context-support', version: '3.2.0.RELEASE'
+	// https://mvnrepository.com/artifact/org.eclipse.birt.runtime.3_7_1/com.lowagie.text
+	compile group: 'org.eclipse.birt.runtime.3_7_1', name: 'com.lowagie.text', version: '2.1.7'
+	// https://mvnrepository.com/artifact/ar.com.fdvs/DynamicJasper
+	//compile group: 'ar.com.fdvs', name: 'DynamicJasper', version: '3.0.5'
+
 	runtime('mysql:mysql-connector-java')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
